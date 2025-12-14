@@ -10,7 +10,7 @@ void tokenize(char *line, char **tokens);
 
 int main() {
     while (1) {
-        printf("sh> ");
+        printf("> ");
         fflush(stdout);
 
         char line[1024];
@@ -36,7 +36,7 @@ int main() {
             perror("execvp");
             _exit(1);
         } else if (pid < 0) {
-            perror("sh");
+            perror("shell");
         } else {
             do {
                 wpid = waitpid(pid, &status, WUNTRACED);
